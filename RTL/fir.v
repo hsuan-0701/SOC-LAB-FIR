@@ -137,7 +137,7 @@ assign y_cnt_lave   = config_data_length - data_out_cnt ;
 
 always @(*) begin           //---sm_tvalid
     if(dirty_v_cnt < 3'd2) begin
-        dirty_v_cnt_nxt = (acc_clear && (!acc_clear_nxt))? (dirty_v_cnt + 3'd1) : (dirty_v_cnt);
+        dirty_v_cnt_nxt = (acc_clear && (!ss_stall_1) && (!sm_stall_1))? (dirty_v_cnt + 3'd1) : (dirty_v_cnt);
     end else begin
         dirty_v_cnt_nxt = dirty_v_cnt ;
     end
@@ -150,7 +150,7 @@ always @(*) begin           //---sm_tvalid
         if(sm_tready && sm_tvalid_r)begin
             sm_tvalid_r_nxt = 1'b0;
         end else if(!sm_tvalid_r) begin
-            sm_tvalid_r_nxt = (acc_clear && (!acc_clear_nxt) || clear_last_3)? 1'b1 : 1'b0;
+            sm_tvalid_r_nxt = (acc_clear && (!ss_stall_1) && (!sm_stall_1))? 1'b1 : 1'b0;
         end else begin
             sm_tvalid_r_nxt = sm_tvalid_r ;
         end
@@ -165,7 +165,7 @@ end
 
 always @(*) begin           //---acc_reg
     if(x_in_cnt > 32'd0)begin
-        acc_reg_nxt = (acc_clear && (!acc_clear_nxt))? mul_reg : (mul_reg + acc_reg);
+        acc_reg_nxt = (acc_clear)? mul_reg : (mul_reg + acc_reg);
     end else begin
         acc_reg_nxt = acc_reg ;
     end
@@ -257,7 +257,7 @@ always @(*) begin           //--- x_out_pointer
 end
 
 always @(*) begin           //---y_buff
-    y_buff_nxt = (acc_clear && (!acc_clear_nxt) || clear_last_3)? acc_reg : y_buff;
+    y_buff_nxt = (acc_clear || clear_last_3)? acc_reg : y_buff;
 end
 
 always @(*) begin           //---y_cnt
@@ -268,13 +268,19 @@ always @(*) begin           //---y_cnt
     end
 end
 
+
+
 always @(*) begin           //---sm_stall
     if(sm_stall)begin
         sm_stall_nxt = (sm_tvalid_r && sm_tready)?  1'b0 : 1'b1 ;
-    end else if (data_out_cnt < 32'd2) begin
-        sm_stall_nxt = (sm_tvalid_r && (!sm_tready))? 1'b1 :1'b0 ; 
-    end else begin
-        sm_stall_nxt = (((clear_last_1_nxt) || (ss_stall_1_nxt) ) && (sm_tvalid_r) && (!sm_tready))? 1'b1 : 1'b0 ;
+    end else if(!data_full_r)begin
+        if(x_in_p_r < 5'd2)begin
+            sm_stall_nxt = 1'b0 ;  
+        end else begin    
+            sm_stall_nxt = ((h_out_p_r == 5'd1) && sm_tvalid_r && (!sm_tready))? 1'b1 : 1'b0 ;
+        end    
+    end else  begin
+        sm_stall_nxt = ((h_out_p_r == 5'd1) && sm_tvalid_r && (!sm_tready))? 1'b1 : 1'b0 ;
     end
 end
 
@@ -363,7 +369,7 @@ always @(posedge axis_clk or negedge axis_rst_n) begin          //*---y_buff
         y_buff <= clear_buff[(pDATA_WIDTH-1):0];
     end else if(ap_reg[1])begin
         y_buff <= clear_buff[(pDATA_WIDTH-1):0];
-    end else if((!ap_reg[2]) && (!sm_stall_1))begin
+    end else if((!ap_reg[2]) && (!ss_stall_1) && (!sm_stall_1))begin
         y_buff <= y_buff_nxt ;
     end
 end
@@ -480,23 +486,7 @@ always @(*) begin           //---data_full_r : check whether the data ram is ful
     end
 end
 
-always @(*) begin           //---data ram write enable
-    if(fir_last)begin
-        WE_x_r_nxt = 4'b0000;
-    end else if(!data_full_r_nxt)begin
-        if(WE_x_r[0])begin
-            WE_x_r_nxt = (x_buff_v)? 4'b0000 : 4'b1111 ;
-        end else begin
-            WE_x_r_nxt = (x_out_p_r == 5'd0 )? 4'b1111 : 4'b0000 ;
-        end 
-    end else begin
-        if(WE_x_r[0])begin
-            WE_x_r_nxt = (x_buff_v)? 4'b0000 : 4'b1111 ;
-        end else begin
-            WE_x_r_nxt = (x_p_diff_oi == 5'd1)? 4'b1111 : 4'b0000 ;
-        end 
-    end
-end
+
 
 always @(*) begin           //--- x_buff_d
     if(ss_tready_r && ss_tvalid )begin
@@ -546,7 +536,7 @@ always @(*) begin           //--- ss_tready_r
     end else if(ss_tvalid && ss_tready_r)begin
         ss_tready_r_nxt = 1'b0 ;
     end else begin
-        if(ss_tvalid && (!x_buff_v))begin
+        if(ss_tvalid && (!x_buff_v) && (!sm_stall))begin
             ss_tready_r_nxt = 1'b1;
         end else begin
             ss_tready_r_nxt = 1'b0;
@@ -588,51 +578,60 @@ end
 
 always @(*)begin            //--- ss_stall_123
     ss_stall_1_nxt = ss_stall ;
-    ss_stall_2_nxt = ss_stall_1;
-    ss_stall_3_nxt = ss_stall_2 ;
-    acc_clear_nxt  = ss_stall_3 ; 
     sm_stall_1_nxt = sm_stall  ;
 end
 
-always @(posedge axis_clk or negedge axis_rst_n)begin           //--- ss_stall
-    if(!axis_rst_n)begin
-        ss_stall_3  <= 1'b0; 
-        ss_stall_2  <= 1'b0;
-        ss_stall_1  <= 1'b0;
-        ss_stall    <= 1'b0;
-        WE_x_r      <= 4'b0000;
-    end else if(ap_reg[0])begin
-        ss_stall_3  <= 1'b1;
-        ss_stall_2  <= 1'b0;
-        ss_stall_1  <= 1'b0;
-        ss_stall    <= 1'b0;  
-        WE_x_r      <= 4'b1111;
-    end else if(ap_reg[1])begin
-        ss_stall_3  <= 1'b0; 
-        ss_stall_2  <= 1'b0;
-        ss_stall_1  <= 1'b0;
-        ss_stall    <= 1'b0;
-        WE_x_r      <= 4'b0000;
-    end else if((!ap_reg[2]) && (!sm_stall)) begin
-        ss_stall_3  <= ss_stall_3_nxt ;
-        ss_stall_2  <= ss_stall_2_nxt;
-        ss_stall_1  <= ss_stall_1_nxt;
-        ss_stall    <= ss_stall_nxt ;
-        WE_x_r      <= WE_x_r_nxt ;
+always @(*) begin               //*----acc_clear *
+    if(!data_full_r)begin
+        case(x_in_p_r)
+            5'd0 :    acc_clear_nxt = 1'b0 ; 
+            5'd1 :    acc_clear_nxt = 1'b1 ;
+            5'd2 :    acc_clear_nxt = ((h_out_p_r == 5'd2)|| (h_out_p_r==5'd0) )? 1'b1 : 1'b0 ;
+            default : acc_clear_nxt = (h_out_p_r == 5'd2)? 1'b1 : 1'b0 ;
+        endcase    
+    end else begin    
+        acc_clear_nxt = (h_out_p_r == 5'd2)? 1'b1 :1'b0 ;
     end
 end
 
-always @(posedge axis_clk or negedge axis_rst_n)begin           //--- acc_clear
+always @(posedge axis_clk or negedge axis_rst_n)begin           //*--- acc_clear*
     if(!axis_rst_n)begin
-        acc_clear   <= 1'b0 ;
+        acc_clear  <= 1'b0;
     end else if(ap_reg[0])begin
-        acc_clear   <= 1'b0 ;
+        acc_clear  <= 1'b0;
     end else if(ap_reg[1])begin
-        acc_clear   <= 1'b0 ;
-    end else if((!ap_reg[2]) && (!ss_stall_1) && (!sm_stall_1)) begin
-        acc_clear   <= acc_clear_nxt;
+        acc_clear  <= 1'b0;
+    end else if((!ap_reg[2]) && (!sm_stall_1) && (!ss_stall_1)) begin
+        acc_clear  <= acc_clear_nxt ;
     end
 end
+
+
+always @(posedge axis_clk or negedge axis_rst_n)begin           //--- ss_stall
+    if(!axis_rst_n)begin;
+        ss_stall_1  <= 1'b0;
+        ss_stall    <= 1'b0;
+    end else if(ap_reg[0])begin
+        ss_stall_1  <= 1'b0;
+        ss_stall    <= 1'b0;  
+    end else if(ap_reg[1])begin
+        ss_stall_1  <= 1'b0;
+        ss_stall    <= 1'b0;
+    end else if((!ap_reg[2]) && (!sm_stall)) begin
+        ss_stall_1  <= ss_stall_1_nxt;
+        ss_stall    <= ss_stall_nxt ;
+    end
+end
+always @(*) begin
+    if(ss_stall)begin
+        WE_x_r = 4'B1111;
+    end else begin
+        WE_x_r = 4'b0000;
+    end
+end
+
+
+
 
 always @(posedge axis_clk or negedge axis_rst_n ) begin         //--- x_in_cnt
     if(!axis_rst_n)begin
@@ -641,7 +640,7 @@ always @(posedge axis_clk or negedge axis_rst_n ) begin         //--- x_in_cnt
         x_in_cnt <= 32'd0;
     end else if(ap_reg[1])begin
         x_in_cnt <= 32'd0;
-    end else if(WE_x_r && x_buff_v) begin
+    end else if(WE_x_r && x_buff_v && (!sm_stall)) begin
         x_in_cnt <= (x_in_cnt +32'd1) ;
     end
 end
