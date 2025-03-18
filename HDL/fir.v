@@ -783,7 +783,7 @@ end
 
 always @(*) begin           //*---EN_h        
     if(!ap_reg[1])begin
-        EN_h = 1'b1;;        //ap not done
+        EN_h = 1'b1;        //ap not done
     end else begin        
         EN_h = (WE_h[0])? 1'b1 : 1'b0;    //ap  iddle
     end
