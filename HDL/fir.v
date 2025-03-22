@@ -606,7 +606,7 @@ end
 
 
 always @(posedge axis_clk or negedge axis_rst_n)begin           //--- ss_stall
-    if(!axis_rst_n)begin;
+    if(!axis_rst_n)begin
         ss_stall_1  <= 1'b0;
         ss_stall    <= 1'b0;
     end else if(ap_reg[0])begin
