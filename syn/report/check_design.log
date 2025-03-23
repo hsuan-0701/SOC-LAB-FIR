@@ -1,0 +1,61 @@
+ 
+****************************************
+check_design summary:
+Version:     U-2022.12
+Date:        Sun Mar 23 11:36:24 2025
+****************************************
+
+                   Name                                            Total
+--------------------------------------------------------------------------------
+Inputs/Outputs                                                     16
+    Shorted outputs (LINT-31)                                       9
+    Constant outputs (LINT-52)                                      7
+
+Cells                                                              27
+    Cells do not drive (LINT-1)                                    27
+--------------------------------------------------------------------------------
+
+Warning: In design 'fir', cell 'B_65' does not drive any nets. (LINT-1)
+Warning: In design 'fir', cell 'C4795' does not drive any nets. (LINT-1)
+Warning: In design 'fir', cell 'C4811' does not drive any nets. (LINT-1)
+Warning: In design 'fir', cell 'C4816' does not drive any nets. (LINT-1)
+Warning: In design 'fir', cell 'B_71' does not drive any nets. (LINT-1)
+Warning: In design 'fir', cell 'C4820' does not drive any nets. (LINT-1)
+Warning: In design 'fir', cell 'C4836' does not drive any nets. (LINT-1)
+Warning: In design 'fir', cell 'C4841' does not drive any nets. (LINT-1)
+Warning: In design 'fir', cell 'C4845' does not drive any nets. (LINT-1)
+Warning: In design 'fir', cell 'C4849' does not drive any nets. (LINT-1)
+Warning: In design 'fir', cell 'C4862' does not drive any nets. (LINT-1)
+Warning: In design 'fir', cell 'C4867' does not drive any nets. (LINT-1)
+Warning: In design 'fir', cell 'B_77' does not drive any nets. (LINT-1)
+Warning: In design 'fir', cell 'C4871' does not drive any nets. (LINT-1)
+Warning: In design 'fir', cell 'C4889' does not drive any nets. (LINT-1)
+Warning: In design 'fir', cell 'B_79' does not drive any nets. (LINT-1)
+Warning: In design 'fir', cell 'C5182' does not drive any nets. (LINT-1)
+Warning: In design 'fir', cell 'C5186' does not drive any nets. (LINT-1)
+Warning: In design 'fir', cell 'C5266' does not drive any nets. (LINT-1)
+Warning: In design 'fir', cell 'B_85' does not drive any nets. (LINT-1)
+Warning: In design 'fir', cell 'C5330' does not drive any nets. (LINT-1)
+Warning: In design 'fir', cell 'C5345' does not drive any nets. (LINT-1)
+Warning: In design 'fir', cell 'C5391' does not drive any nets. (LINT-1)
+Warning: In design 'fir', cell 'C5407' does not drive any nets. (LINT-1)
+Warning: In design 'fir', cell 'C5428' does not drive any nets. (LINT-1)
+Warning: In design 'fir', cell 'C5437' does not drive any nets. (LINT-1)
+Warning: In design 'fir', cell 'C5633' does not drive any nets. (LINT-1)
+Warning: In design 'fir', output port 'data_WE[3]' is connected directly to output port 'data_WE[0]'. (LINT-31)
+Warning: In design 'fir', output port 'data_WE[3]' is connected directly to output port 'data_WE[1]'. (LINT-31)
+Warning: In design 'fir', output port 'data_WE[3]' is connected directly to output port 'data_WE[2]'. (LINT-31)
+Warning: In design 'fir', output port 'data_A[11]' is connected directly to output port 'data_A[0]'. (LINT-31)
+Warning: In design 'fir', output port 'data_A[11]' is connected directly to output port 'data_A[1]'. (LINT-31)
+Warning: In design 'fir', output port 'data_A[11]' is connected directly to output port 'data_A[7]'. (LINT-31)
+Warning: In design 'fir', output port 'data_A[11]' is connected directly to output port 'data_A[8]'. (LINT-31)
+Warning: In design 'fir', output port 'data_A[11]' is connected directly to output port 'data_A[9]'. (LINT-31)
+Warning: In design 'fir', output port 'data_A[11]' is connected directly to output port 'data_A[10]'. (LINT-31)
+Warning: In design 'fir', output port 'data_A[11]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'fir', output port 'data_A[10]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'fir', output port 'data_A[9]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'fir', output port 'data_A[8]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'fir', output port 'data_A[7]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'fir', output port 'data_A[1]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'fir', output port 'data_A[0]' is connected directly to 'logic 0'. (LINT-52)
+1

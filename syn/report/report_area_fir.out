@@ -1,0 +1,43 @@
+ 
+****************************************
+Report : area
+Design : fir
+Version: U-2022.12
+Date   : Sun Mar 23 11:37:10 2025
+****************************************
+
+Library(s) Used:
+
+    slow (File: /home/raid7_2/user13/r3921070/SOC_lab_fir/syn/CBDK_TSMC018_Arm_f1.0/CIC/SynopsysDC/db/slow.db)
+
+Number of ports:                          330
+Number of nets:                          3603
+Number of cells:                         3090
+Number of combinational cells:           2644
+Number of sequential cells:               439
+Number of macros/black boxes:               0
+Number of buf/inv:                        332
+Number of references:                     106
+
+Combinational area:              58834.037653
+Buf/Inv area:                     3605.817626
+Noncombinational area:           30050.697166
+Macro/Black Box area:                0.000000
+Net Interconnect area:      undefined  (No wire load specified)
+
+Total cell area:                 88884.734820
+Total area:                 undefined
+
+Hierarchical area distribution
+------------------------------
+
+                                  Global cell area            Local cell area
+                                  -------------------  ------------------------------ 
+Hierarchical cell                 Absolute    Percent  Combi-      Noncombi-   Black-
+                                  Total       Total    national    national    boxes   Design
+--------------------------------  ----------  -------  ----------  ----------  ------  ---------
+fir                               88884.7348    100.0  58834.0377  30050.6972  0.0000  fir
+--------------------------------  ----------  -------  ----------  ----------  ------  ---------
+Total                                                  58834.0377  30050.6972  0.0000
+
+1
