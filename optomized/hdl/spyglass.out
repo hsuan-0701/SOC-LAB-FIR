@@ -1,0 +1,255 @@
+read_file: info: using default project `spyglass-1.prj'
+fir.vread_file: info: Attempting to read the 'hdl' file again, ignoring the subsequent read 'fir.v' (ignored)
+current_goal: info: loading goal `Design_Read' (in progress)
+current_goal: info: finished loading goal `Design_Read' (ok)
+yes
+INFO:    SpyGlass will run goal(s) 'Design_Read'.
+
+
+RULE-CHECKING IN MIXED MODE
+Loading spyglass (SpyGlass_vT-2022.06) ... (picked from /home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/policies/spyglass)
+Loading txv (SpyGlass_vT-2022.06) ... (picked from /home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/policies/txv)
+
+TXV_INFO Parameter txv_extract_domain will be renamed to txv_domain_mode in future!
+
+Loading timing (SpyGlass_vT-2022.06) ... (picked from /home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/policies/timing)
+Loading starcad-21 (SpyGlass_vT-2022.06) ... (picked from /home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/policies/starcad-21)
+Loading starc2005 (SpyGlass_vT-2022.06) ... (picked from /home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/policies/starc2005)
+Loading starc2002 (SpyGlass_vT-2022.06) ... (picked from /home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/policies/starc2002)
+Loading starc (SpyGlass_vT-2022.06) ... (picked from /home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/policies/starc)
+Loading simulation (SpyGlass_vT-2022.06) ... (picked from /home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/policies/simulation)
+Loading power_est (SpyGlass_vT-2022.06) ... (picked from /home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/policies/power_est)
+Loading openmore (SpyGlass_vT-2022.06) ... (picked from /home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/policies/openmore)
+Loading morelint (SpyGlass_vT-2022.06) ... (picked from /home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/policies/morelint)
+Loading miscellaneous (SpyGlass_vT-2022.06) ... (picked from /home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/policies/miscellaneous)
+Loading lowpower (5.6.1) ... (picked from /home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/policies/lowpower)
+Loading lint (SpyGlass_vT-2022.06) ... (picked from /home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/policies/lint)
+Loading latch (SpyGlass_vT-2022.06) ... (picked from /home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/policies/latch)
+Loading erc (SpyGlass_vT-2022.06) ... (picked from /home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/policies/erc)
+Loading dft_dsm (SpyGlass_vT-2022.06) ... (picked from /home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/policies/dft_dsm)
+Loading dft (SpyGlass_vT-2022.06) ... (picked from /home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/policies/dft)
+Loading constraints (SpyGlass_vT-2022.06) ... (picked from /home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/policies/constraints)
+Loading const_intern1 (SpyGlass_vT-2022.06) ... (picked from /home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/policies/constraints)
+Loading clock-reset (SpyGlass_vT-2022.06) ... (picked from /home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/policies/clock)
+Loading area (SpyGlass_vT-2022.06) ... (picked from /home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/policies/area)
+Loading Audits (SpyGlass_vT-2022.06) ... (picked from /home/raid7_4/raid1_1/linux/synopsys/spyglass/2022.06/SPYGLASS_HOME/policies/Audits)
+
+INFO [6]    Work Directory './spyglass-1/WORK' does not exist.
+
+INFO [75]    Creating the Work Directory './spyglass-1/WORK/64' for 64bit  precompiled dump.
+Checking Rule SGDC_power_est29 (Rule 1 of total 164) .... done (Time = 0.00s, Memory = 0.0K)
+Checking Rule PECHECK04 (Rule 2 of total 164) .... done (Time = 0.03s, Memory = -1304.0K)
+Checking Rule PECHECK18 (Rule 3 of total 164) .... done (Time = 0.00s, Memory = 1280.0K)
+Checking Rule PEMVDD01 (Rule 4 of total 164) .... done (Time = 0.00s, Memory = 0.0K)
+Checking Rule ZeroSizeFile (Rule 5 of total 164) .... done (Time = 0.00s, Memory = 0.0K)
+Checking Rule PrecompileLibCheck01 (Rule 6 of total 164) .... done (Time = 0.00s, Memory = 0.0K)
+Checking Rule PrecompileLibCheck02 (Rule 7 of total 164) .... done (Time = 0.00s, Memory = 0.0K)
+Checking Rule PrecompileLibCheck03 (Rule 8 of total 164) .... done (Time = 0.00s, Memory = 0.0K)
+Checking Rule PrecompileLibCheck04 (Rule 9 of total 164) .... done (Time = 0.00s, Memory = 0.0K)
+Checking Rule AbstractInterface (Rule 10 of total 164) .... done (Time = 0.00s, Memory = 0.0K)
+Checking Rule ReportObsoleteRules (Rule 11 of total 164) .... done (Time = 0.00s, Memory = 0.0K)
+Checking Rule ReportDeprecatedRules (Rule 12 of total 164) .... done (Time = 0.00s, Memory = 0.0K)
+Checking Rule SGDC_assume_path01 (Rule 13 of total 164) .... done (Time = 0.00s, Memory = 0.0K)
+Checking Rule SGDC_sdcschema02 (Rule 14 of total 164) .... done (Time = 0.00s, Memory = 1312.0K)
+Checking Rule SGDC_clock05 (Rule 15 of total 164) .... done (Time = 0.00s, Memory = -16.0K)
+Checking Rule SGDC_clock09 (Rule 16 of total 164) .... done (Time = 0.00s, Memory = 0.0K)
+Checking Rule SGDC_force_ta05 (Rule 17 of total 164) .... done (Time = 0.00s, Memory = 0.0K)
+Checking Rule SGDC_require_path03 (Rule 18 of total 164) .... done (Time = 0.00s, Memory = -32.0K)
+Checking Rule SGDC_require_value03 (Rule 19 of total 164) .... done (Time = 0.00s, Memory = 0.0K)
+Checking Rule SGDC_voltagedomain05 (Rule 20 of total 164) .... done (Time = 0.00s, Memory = 8.0K)
+Checking Rule SGDC_voltagedomain06 (Rule 21 of total 164) .... done (Time = 0.00s, Memory = 0.0K)
+Checking Rule SGDC_voltagedomain07 (Rule 22 of total 164) .... done (Time = 0.00s, Memory = 8.0K)
+Checking Rule SGDC_powerdomainoutputs02 (Rule 23 of total 164) .... done (Time = 0.00s, Memory = 8.0K)
+Checking Rule SGDC_supply01 (Rule 24 of total 164) .... done (Time = 0.00s, Memory = 0.0K)
+Checking Rule SGDC_waive01 (Rule 25 of total 164) .... done (Time = 0.00s, Memory = 0.0K)
+Checking Rule SGDC_waive02 (Rule 26 of total 164) .... done (Time = 0.00s, Memory = 0.0K)
+Checking Rule SGDC_waive03 (Rule 27 of total 164) .... done (Time = 0.00s, Memory = 0.0K)
+Checking Rule SGDC_waive04 (Rule 28 of total 164) .... done (Time = 0.00s, Memory = 0.0K)
+Checking Rule SGDC_waive05 (Rule 29 of total 164) .... done (Time = 0.00s, Memory = 0.0K)
+Checking Rule SGDC_waive06 (Rule 30 of total 164) .... done (Time = 0.00s, Memory = 0.0K)
+Checking Rule SGDC_waive07 (Rule 31 of total 164) .... done (Time = 0.00s, Memory = 0.0K)
+Checking Rule SGDC_waive08 (Rule 32 of total 164) .... done (Time = 0.00s, Memory = 0.0K)
+Checking Rule SGDC_waive09 (Rule 33 of total 164) .... done (Time = 0.00s, Memory = 0.0K)
+Checking Rule SGDC_waive10 (Rule 34 of total 164) .... done (Time = 0.00s, Memory = 0.0K)
+Checking Rule SGDC_waive11 (Rule 35 of total 164) .... done (Time = 0.00s, Memory = 0.0K)
+Checking Rule SGDC_waive12 (Rule 36 of total 164) .... done (Time = 0.00s, Memory = 0.0K)
+Checking Rule SGDC_waive13 (Rule 37 of total 164) .... done (Time = 0.00s, Memory = 0.0K)
+Checking Rule SGDC_waive21 (Rule 38 of total 164) .... done (Time = 0.00s, Memory = 0.0K)
+Checking Rule SGDC_waive22 (Rule 39 of total 164) .... done (Time = 0.00s, Memory = 0.0K)
+Checking Rule SGDC_waive30 (Rule 40 of total 164) .... done (Time = 0.00s, Memory = 0.0K)
+Checking Rule SGDC_waive32 (Rule 41 of total 164) .... done (Time = 0.00s, Memory = 0.0K)
+Checking Rule SGDC_waive33 (Rule 42 of total 164) .... done (Time = 0.00s, Memory = 0.0K)
+Checking Rule SGDC_waive36 (Rule 43 of total 164) .... done (Time = 0.00s, Memory = 0.0K)
+Checking Rule SGDC_waive38 (Rule 44 of total 164) .... done (Time = 0.00s, Memory = 0.0K)
+Checking Rule SGDC_fifo01 (Rule 45 of total 164) .... done (Time = 0.00s, Memory = 0.0K)
+Checking Rule SGDC_libgroup01 (Rule 46 of total 164) .... done (Time = 0.00s, Memory = 0.0K)
+Checking Rule SGDC_libgroup02 (Rule 47 of total 164) .... done (Time = 0.00s, Memory = 0.0K)
+Checking Rule SGDC_libgroup04 (Rule 48 of total 164) .... done (Time = 0.00s, Memory = 0.0K)
+Checking Rule SGDC_power_data01 (Rule 49 of total 164) .... done (Time = 0.00s, Memory = 8.0K)
+Checking Rule SGDC_ungroup01 (Rule 50 of total 164) .... done (Time = 0.00s, Memory = 0.0K)
+Checking Rule SGDC_abstract_port06 (Rule 51 of total 164) .... done (Time = 0.00s, Memory = 16.0K)
+Checking Rule SGDC_abstract_port14 (Rule 52 of total 164) .... done (Time = 0.00s, Memory = 0.0K)
+Checking Rule SGDC_abstract_port15 (Rule 53 of total 164) .... done (Time = 0.00s, Memory = 0.0K)
+Checking Rule SGDC_abstract_port18 (Rule 54 of total 164) .... done (Time = 0.00s, Memory = 32.0K)
+Checking Rule sdc_init_rule (Rule 55 of total 164) .... done (Time = 0.00s, Memory = -32.0K)
+Checking Rule CMD_ignorelibs01 (Rule 56 of total 164) .... done (Time = 0.00s, Memory = 0.0K)
+Checking Rule ReportRuleNotRun (Rule 57 of total 164) .... done (Time = 0.00s, Memory = 0.0K)
+Checking Rule ReportStopSummary (Rule 58 of total 164) .... done (Time = 0.00s, Memory = 0.0K)
+Checking Rule ReportIgnoreSummary (Rule 59 of total 164) .... done (Time = 0.00s, Memory = 0.0K)
+ Analyzing source file "fir.v" ....
+ Elaborating Top Verilog Design Unit 'fir' .....
+ done
+Checking Rule ElabSummary (Rule 60 of total 164) .... done (Time = 0.01s, Memory = 0.0K)
+Checking Rule ReportCheckDataSummary (Rule 61 of total 164) .... done (Time = 0.00s, Memory = 0.0K)
+ Reading waiver file "./spyglass-1/Design_Read/spyglass_spysch/constraint/spg_autogenerated_waivers.sgdc" ...
+ Generating SGDC file "./spyglass-1/Design_Read/spyglass_spysch/constraint/pragma2Constraint.sgdc" from pragmas in HDL source files ....
+ Generating WAIVER file "./spyglass-1/Design_Read/spyglass_spysch/waiver/pragma2Waiver.swl" from pragmas in HDL source files ....
+Checking Rule DetectTopDesignUnits (Rule 62 of total 164)
+ Detected 1 top level design units:
+     fir
+ .... done (Time = 0.00s, Memory = 0.0K)
+Performing semantic checks on SGDC contents
+Checking Rule SGDC_testmode03 (Rule 63 of total 164) .... done (Time = 0.00s, Memory = 0.0K)
+Checking Rule PECHECK09 (Rule 64 of total 164) .... done (Time = 0.00s, Memory = 112.0K)
+Checking Rule Ac_multitop01 (Rule 65 of total 164) .... done (Time = 0.00s, Memory = 0.0K)
+Checking Rule ReportObsoletePragmas (Rule 66 of total 164) .... done (Time = 0.00s, Memory = 0.0K)
+Checking Rule ReportCksum (Rule 67 of total 164) .... done (Time = 0.01s, Memory = 0.0K)
+Checking Rule checkSGDC_01 (Rule 68 of total 164) .... done (Time = 0.00s, Memory = 0.0K)
+Checking Rule checkSGDC_03 (Rule 69 of total 164) .... done (Time = 0.00s, Memory = 8.0K)
+Checking Rule checkSGDC_08 (Rule 70 of total 164) .... done (Time = 0.00s, Memory = 0.0K)
+Checking Rule GenerateConfMap (Rule 71 of total 164) .... done (Time = 0.00s, Memory = 32.0K)
+Checking Rule SGDC_memorywritepin04 (Rule 72 of total 164) .... done (Time = 0.00s, Memory = 40.0K)
+Checking Rule SGDC_reset02 (Rule 73 of total 164) .... done (Time = 0.00s, Memory = 8.0K)
+Checking Rule SGDC_reset03 (Rule 74 of total 164) .... done (Time = 0.00s, Memory = 0.0K)
+Checking Rule SGDC_libgroup03 (Rule 75 of total 164) .... done (Time = 0.00s, Memory = 0.0K)
+Checking Rule SGDC_ungroup02 (Rule 76 of total 164) .... done (Time = 0.00s, Memory = 0.0K)
+Checking Rule HdlLibDuCheck (Rule 77 of total 164) .... done (Time = 0.00s, Memory = 0.0K)
+Checking Rule RtlDesignInfo (Rule 78 of total 164) .... done (Time = 0.01s, Memory = 8.0K)
+Checking Rule Prereqs_STARC-1.6.2.1 (Rule 79 of total 164) .... done (Time = 0.00s, Memory = -32.0K)
+Checking Rule Pragma_setupa (Rule 80 of total 164) .... done (Time = 0.00s, Memory = 0.0K)
+Checking Rule _deltaDelay (Rule 81 of total 164) .... done (Time = 0.00s, Memory = 40.0K)
+Checking Rule _deltaDelay (Rule 82 of total 164) .... done (Time = 0.00s, Memory = 0.0K)
+Checking Rule CheckCelldefine (Rule 83 of total 164) .... done (Time = 0.00s, Memory = -1280.0K)
+Checking Rule SGDC_waive23 (Rule 84 of total 164) .... done (Time = 0.00s, Memory = 0.0K)
+Checking Rule SGDC_waive26 (Rule 85 of total 164) .... done (Time = 0.00s, Memory = 0.0K)
+Checking Rule SGDC_waive27 (Rule 86 of total 164) .... done (Time = 0.00s, Memory = 0.0K)
+Checking Rule SGDC_waive29 (Rule 87 of total 164) .... done (Time = 0.00s, Memory = 0.0K)
+Checking ELABDU Rules for designUnit fir
+    Checking Rule Prereqs_ConstantInput-ML (Rule 88 of total 164) .... done (Time = 0.00s, Memory = 0.0K)
+    Checking Rule Prereqs_ConstantInput-ML (Rule 89 of total 164) .... done (Time = 0.00s, Memory = 32.0K)
+    Checking Rule Ac_classify_param01 (Rule 90 of total 164) .... done (Time = 0.00s, Memory = 0.0K)
+    Checking Rule AcOvlRtl (Rule 91 of total 164) .... done (Time = 0.00s, Memory = 0.0K)
+    Checking Rule AcOvlRtl (Rule 92 of total 164) .... done (Time = 0.00s, Memory = 32.0K)
+    Checking Rule GenTopLevelBlocksForAutoSoc (Rule 93 of total 164) .... done (Time = 0.00s, Memory = 0.0K)
+Checking Rule PECHECK56 (Rule 94 of total 164) .... done (Time = 0.00s, Memory = 0.0K)
+Checking Rule SGDC_meta_design_hier01 (Rule 95 of total 164) .... done (Time = 0.00s, Memory = 0.0K)
+Checking Rule SGDC_waive24 (Rule 96 of total 164) .... done (Time = 0.00s, Memory = 0.0K)
+Checking Rule SGDC_waive25 (Rule 97 of total 164) .... done (Time = 0.00s, Memory = 0.0K)
+Checking Rule SGDC_waive31 (Rule 98 of total 164) .... done (Time = 0.00s, Memory = 0.0K)
+Checking Rule SGDC_waive35 (Rule 99 of total 164) .... done (Time = 0.00s, Memory = 0.0K)
+ Synthesizing module: fir (elaborated name: fir) ... (Module 1 of total 1)  done 
+ Synthesis completed.
+Checking Rule InferBlackBox (Rule 100 of total 164) .... done (Time = 0.01s, Memory = 0.0K)
+Checking Rule checkCMD_mthresh (Rule 101 of total 164) .... done (Time = 0.00s, Memory = 0.0K)
+
+INFO [234]    Saving design database in directory './spyglass-1/.SG_SaveRestoreDB/autogenerated__default_snapshot' ...
+              done
+
+Checking Rule SGDC_waive37 (Rule 102 of total 164) .... done (Time = 0.00s, Memory = 0.0K)
+Checking Rule Txv_SvaSetup01 for module fir (Rule 103 of total 164) .... done (Time = 0.00s, Memory = 0.0K)
+Checking Rule PESVASETUP01 for module fir (Rule 104 of total 164) .... done (Time = 0.00s, Memory = 0.0K)
+Checking Rule _cdc_save_license01 for module fir (Rule 105 of total 164) .... done (Time = 0.00s, Memory = 0.0K)
+Checking Rule _syncResetStyleRTL for module fir (Rule 106 of total 164) .... done (Time = 0.00s, Memory = 0.0K)
+Checking Rule _meta_delay01 for module fir (Rule 107 of total 164) .... done (Time = 0.00s, Memory = 0.0K)
+Checking Rule Ac_svasetup01 for module fir (Rule 108 of total 164) .... done (Time = 0.00s, Memory = 0.0K)
+Performing semantic checks on SGDC contents
+Checking Rule SGDC_testmode03 (Rule 63 of total 164) .... done (Time = 0.00s, Memory = 0.0K)
+Checking Rule _abstractPortSGDC (Rule 109 of total 164) .... done (Time = 0.00s, Memory = 0.0K)
+Checking Rule SGDC_abstract_port03 (Rule 110 of total 164) .... done (Time = 0.00s, Memory = 0.0K)
+Checking Rule SGDC_abstract_port04 (Rule 111 of total 164) .... done (Time = 0.00s, Memory = 0.0K)
+Checking Rule SGDC_abstract_port05 (Rule 112 of total 164) .... done (Time = 0.00s, Memory = 0.0K)
+Checking Rule SGDC_abstract_port07 (Rule 113 of total 164) .... done (Time = 0.00s, Memory = 0.0K)
+Checking Rule SGDC_abstract_port08 (Rule 114 of total 164) .... done (Time = 0.00s, Memory = 0.0K)
+Checking Rule SGDC_abstract_port10 (Rule 115 of total 164) .... done (Time = 0.00s, Memory = 0.0K)
+Checking Rule SGDC_abstract_port11 (Rule 116 of total 164) .... done (Time = 0.00s, Memory = 0.0K)
+Checking Rule SGDC_abstract_port12 (Rule 117 of total 164) .... done (Time = 0.00s, Memory = 0.0K)
+Checking Rule SGDC_abstract_port13 (Rule 118 of total 164) .... done (Time = 0.00s, Memory = 0.0K)
+Checking Rule ReportUngroup (Rule 119 of total 164) .... done (Time = 0.00s, Memory = 0.0K)
+Checking Rule ResetFlop-ML (Rule 120 of total 164) .... done (Time = 0.01s, Memory = 1280.0K)
+Checking Rule SGDC_abstract_port21 (Rule 121 of total 164) .... done (Time = 0.00s, Memory = 0.0K)
+Checking Rule SGDC_assume_path05 (Rule 122 of total 164) .... done (Time = 0.00s, Memory = 0.0K)
+ Flattening fir (.lib instances separately flattened) ....
+ Flattening completed
+Checking Rule AnalyzeBBox (Rule 123 of total 164) .... done (Time = 0.00s, Memory = 0.0K)
+Checking Rule ReportCheckDataSummary (Rule 61 of total 164) .... done (Time = 0.00s, Memory = 32.0K)
+
+Generating data for Console...
+
+SpyGlass Rule Checking Complete.
+
+Generating moresimple report from './spyglass-1/Design_Read/spyglass.vdb' to './spyglass-1/Design_Read/spyglass_reports/moresimple.rpt' ....
+
+Generating runsummary report from './spyglass-1/Design_Read/spyglass.vdb' ....
+
+Generating no_msg_reporting_rules report from './spyglass-1/Design_Read/spyglass.vdb' to './spyglass-1/Design_Read/spyglass_reports/no_msg_reporting_rules.rpt' ....
+
+Policy specific data (reports) are present in the directory './spyglass-1/Design_Read/spyglass_reports'.
+
+SpyGlass critical reports for the current run are present in directory './spyglass-1/consolidated_reports/Design_Read/'.
+
+---------------------------------------------------------------------------------------------
+Results Summary:
+---------------------------------------------------------------------------------------------
+   Goal Run           :      Design_Read
+   Command-line read  :      0 error,      0 warning,      0 information message 
+   Design Read        :      0 error,      0 warning,      2 information messages
+      Found 1 top module:
+         fir   (file: fir.v)
+
+   Blackbox Resolution:      0 error,      0 warning,      0 information message 
+   SGDC Checks        :      0 error,      0 warning,      0 information message 
+   -------------------------------------------------------------------------------------
+   Total              :      0 error,      0 warning,      2 information messages
+
+  Total Number of Generated Messages     :         2 (0 error, 0 warning, 2 Infos)
+  Number of Reported Messages            :         2 (0 error, 0 warning, 2 Infos)
+
+---------------------------------------------------------------------------------------------
+
+
+run_goal: info: updating spyglass.log with goal summary
+---------------------------------------------------------------------------------------------------
+Results Summary:
+---------------------------------------------------------------------------------------------------
+   Goal Run           :      Design_Read
+   Top Module         :      fir
+---------------------------------------------------------------------------------------------------
+   Reports Directory: 
+   /home/raid7_2/user13/r3921070/FIR_OP/pre_sim/spyglass-1/consolidated_reports/Design_Read/ 
+
+   SpyGlass LogFile: 
+    /home/raid7_2/user13/r3921070/FIR_OP/pre_sim/spyglass-1/Design_Read/spyglass.log 
+
+   Standard Reports: 
+     moresimple.rpt          no_msg_reporting_rules.rpt       
+
+   HTML report:
+     <Not Available>
+  
+
+   Technology Reports:  
+     <Not Available>
+   
+   
+---------------------------------------------------------------------------------------------------
+   Goal Violation Summary:
+       Waived   Messages:                      0 Errors,      0 Warnings,      0 Infos
+       Reported Messages:         0 Fatals,    0 Errors,      0 Warnings,      2 Infos
+---------------------------------------------------------------------------------------------------
+   
+---------------------------------------------------------------------------------------------------
+ 
+run_goal: info: spyglass.log successfully updated with goal summary
+run_goal: info: setting design top `fir' as current_design
+compile_design: info: single top `fir' found, setting it as top for subsequent analysis [set_option top fir]
+0 {Rule-checking completed without errors or warnings}
