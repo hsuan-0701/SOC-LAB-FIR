@@ -1,6 +1,5 @@
 read_file: info: using default project `spyglass-1.prj'
-fir.vread_file: info: Attempting to read the 'hdl' file again, ignoring the subsequent read 'fir.v' (ignored)
-current_goal: info: loading goal `Design_Read' (in progress)
+fir.vcurrent_goal: info: loading goal `Design_Read' (in progress)
 current_goal: info: finished loading goal `Design_Read' (ok)
 yes
 INFO:    SpyGlass will run goal(s) 'Design_Read'.
@@ -38,8 +37,8 @@ INFO [6]    Work Directory './spyglass-1/WORK' does not exist.
 
 INFO [75]    Creating the Work Directory './spyglass-1/WORK/64' for 64bit  precompiled dump.
 Checking Rule SGDC_power_est29 (Rule 1 of total 164) .... done (Time = 0.00s, Memory = 0.0K)
-Checking Rule PECHECK04 (Rule 2 of total 164) .... done (Time = 0.03s, Memory = -1304.0K)
-Checking Rule PECHECK18 (Rule 3 of total 164) .... done (Time = 0.00s, Memory = 1280.0K)
+Checking Rule PECHECK04 (Rule 2 of total 164) .... done (Time = 0.02s, Memory = 1256.0K)
+Checking Rule PECHECK18 (Rule 3 of total 164) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule PEMVDD01 (Rule 4 of total 164) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule ZeroSizeFile (Rule 5 of total 164) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule PrecompileLibCheck01 (Rule 6 of total 164) .... done (Time = 0.00s, Memory = 0.0K)
@@ -49,9 +48,9 @@ Checking Rule PrecompileLibCheck04 (Rule 9 of total 164) .... done (Time = 0.00s
 Checking Rule AbstractInterface (Rule 10 of total 164) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule ReportObsoleteRules (Rule 11 of total 164) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule ReportDeprecatedRules (Rule 12 of total 164) .... done (Time = 0.00s, Memory = 0.0K)
-Checking Rule SGDC_assume_path01 (Rule 13 of total 164) .... done (Time = 0.00s, Memory = 0.0K)
-Checking Rule SGDC_sdcschema02 (Rule 14 of total 164) .... done (Time = 0.00s, Memory = 1312.0K)
-Checking Rule SGDC_clock05 (Rule 15 of total 164) .... done (Time = 0.00s, Memory = -16.0K)
+Checking Rule SGDC_assume_path01 (Rule 13 of total 164) .... done (Time = 0.00s, Memory = -1280.0K)
+Checking Rule SGDC_sdcschema02 (Rule 14 of total 164) .... done (Time = 0.01s, Memory = 24.0K)
+Checking Rule SGDC_clock05 (Rule 15 of total 164) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule SGDC_clock09 (Rule 16 of total 164) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule SGDC_force_ta05 (Rule 17 of total 164) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule SGDC_require_path03 (Rule 18 of total 164) .... done (Time = 0.00s, Memory = -32.0K)
@@ -71,14 +70,14 @@ Checking Rule SGDC_waive07 (Rule 31 of total 164) .... done (Time = 0.00s, Memor
 Checking Rule SGDC_waive08 (Rule 32 of total 164) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule SGDC_waive09 (Rule 33 of total 164) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule SGDC_waive10 (Rule 34 of total 164) .... done (Time = 0.00s, Memory = 0.0K)
-Checking Rule SGDC_waive11 (Rule 35 of total 164) .... done (Time = 0.00s, Memory = 0.0K)
+Checking Rule SGDC_waive11 (Rule 35 of total 164) .... done (Time = 0.00s, Memory = 1280.0K)
 Checking Rule SGDC_waive12 (Rule 36 of total 164) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule SGDC_waive13 (Rule 37 of total 164) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule SGDC_waive21 (Rule 38 of total 164) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule SGDC_waive22 (Rule 39 of total 164) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule SGDC_waive30 (Rule 40 of total 164) .... done (Time = 0.00s, Memory = 0.0K)
-Checking Rule SGDC_waive32 (Rule 41 of total 164) .... done (Time = 0.00s, Memory = 0.0K)
-Checking Rule SGDC_waive33 (Rule 42 of total 164) .... done (Time = 0.00s, Memory = 0.0K)
+Checking Rule SGDC_waive32 (Rule 41 of total 164) .... done (Time = 0.01s, Memory = 0.0K)
+Checking Rule SGDC_waive33 (Rule 42 of total 164) .... done (Time = 0.00s, Memory = 32.0K)
 Checking Rule SGDC_waive36 (Rule 43 of total 164) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule SGDC_waive38 (Rule 44 of total 164) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule SGDC_fifo01 (Rule 45 of total 164) .... done (Time = 0.00s, Memory = 0.0K)
@@ -89,7 +88,7 @@ Checking Rule SGDC_power_data01 (Rule 49 of total 164) .... done (Time = 0.00s, 
 Checking Rule SGDC_ungroup01 (Rule 50 of total 164) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule SGDC_abstract_port06 (Rule 51 of total 164) .... done (Time = 0.00s, Memory = 16.0K)
 Checking Rule SGDC_abstract_port14 (Rule 52 of total 164) .... done (Time = 0.00s, Memory = 0.0K)
-Checking Rule SGDC_abstract_port15 (Rule 53 of total 164) .... done (Time = 0.00s, Memory = 0.0K)
+Checking Rule SGDC_abstract_port15 (Rule 53 of total 164) .... done (Time = 0.00s, Memory = 8.0K)
 Checking Rule SGDC_abstract_port18 (Rule 54 of total 164) .... done (Time = 0.00s, Memory = 32.0K)
 Checking Rule sdc_init_rule (Rule 55 of total 164) .... done (Time = 0.00s, Memory = -32.0K)
 Checking Rule CMD_ignorelibs01 (Rule 56 of total 164) .... done (Time = 0.00s, Memory = 0.0K)
@@ -99,7 +98,7 @@ Checking Rule ReportIgnoreSummary (Rule 59 of total 164) .... done (Time = 0.00s
  Analyzing source file "fir.v" ....
  Elaborating Top Verilog Design Unit 'fir' .....
  done
-Checking Rule ElabSummary (Rule 60 of total 164) .... done (Time = 0.01s, Memory = 0.0K)
+Checking Rule ElabSummary (Rule 60 of total 164) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule ReportCheckDataSummary (Rule 61 of total 164) .... done (Time = 0.00s, Memory = 0.0K)
  Reading waiver file "./spyglass-1/Design_Read/spyglass_spysch/constraint/spg_autogenerated_waivers.sgdc" ...
  Generating SGDC file "./spyglass-1/Design_Read/spyglass_spysch/constraint/pragma2Constraint.sgdc" from pragmas in HDL source files ....
@@ -107,15 +106,15 @@ Checking Rule ReportCheckDataSummary (Rule 61 of total 164) .... done (Time = 0.
 Checking Rule DetectTopDesignUnits (Rule 62 of total 164)
  Detected 1 top level design units:
      fir
- .... done (Time = 0.00s, Memory = 0.0K)
+ .... done (Time = 0.00s, Memory = 24.0K)
 Performing semantic checks on SGDC contents
 Checking Rule SGDC_testmode03 (Rule 63 of total 164) .... done (Time = 0.00s, Memory = 0.0K)
-Checking Rule PECHECK09 (Rule 64 of total 164) .... done (Time = 0.00s, Memory = 112.0K)
+Checking Rule PECHECK09 (Rule 64 of total 164) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule Ac_multitop01 (Rule 65 of total 164) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule ReportObsoletePragmas (Rule 66 of total 164) .... done (Time = 0.00s, Memory = 0.0K)
-Checking Rule ReportCksum (Rule 67 of total 164) .... done (Time = 0.01s, Memory = 0.0K)
+Checking Rule ReportCksum (Rule 67 of total 164) .... done (Time = 0.01s, Memory = 8.0K)
 Checking Rule checkSGDC_01 (Rule 68 of total 164) .... done (Time = 0.00s, Memory = 0.0K)
-Checking Rule checkSGDC_03 (Rule 69 of total 164) .... done (Time = 0.00s, Memory = 8.0K)
+Checking Rule checkSGDC_03 (Rule 69 of total 164) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule checkSGDC_08 (Rule 70 of total 164) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule GenerateConfMap (Rule 71 of total 164) .... done (Time = 0.00s, Memory = 32.0K)
 Checking Rule SGDC_memorywritepin04 (Rule 72 of total 164) .... done (Time = 0.00s, Memory = 40.0K)
@@ -124,22 +123,22 @@ Checking Rule SGDC_reset03 (Rule 74 of total 164) .... done (Time = 0.00s, Memor
 Checking Rule SGDC_libgroup03 (Rule 75 of total 164) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule SGDC_ungroup02 (Rule 76 of total 164) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule HdlLibDuCheck (Rule 77 of total 164) .... done (Time = 0.00s, Memory = 0.0K)
-Checking Rule RtlDesignInfo (Rule 78 of total 164) .... done (Time = 0.01s, Memory = 8.0K)
-Checking Rule Prereqs_STARC-1.6.2.1 (Rule 79 of total 164) .... done (Time = 0.00s, Memory = -32.0K)
+Checking Rule RtlDesignInfo (Rule 78 of total 164) .... done (Time = 0.00s, Memory = -1280.0K)
+Checking Rule Prereqs_STARC-1.6.2.1 (Rule 79 of total 164) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule Pragma_setupa (Rule 80 of total 164) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule _deltaDelay (Rule 81 of total 164) .... done (Time = 0.00s, Memory = 40.0K)
 Checking Rule _deltaDelay (Rule 82 of total 164) .... done (Time = 0.00s, Memory = 0.0K)
-Checking Rule CheckCelldefine (Rule 83 of total 164) .... done (Time = 0.00s, Memory = -1280.0K)
+Checking Rule CheckCelldefine (Rule 83 of total 164) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule SGDC_waive23 (Rule 84 of total 164) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule SGDC_waive26 (Rule 85 of total 164) .... done (Time = 0.00s, Memory = 0.0K)
-Checking Rule SGDC_waive27 (Rule 86 of total 164) .... done (Time = 0.00s, Memory = 0.0K)
+Checking Rule SGDC_waive27 (Rule 86 of total 164) .... done (Time = 0.00s, Memory = -8.0K)
 Checking Rule SGDC_waive29 (Rule 87 of total 164) .... done (Time = 0.00s, Memory = 0.0K)
 Checking ELABDU Rules for designUnit fir
     Checking Rule Prereqs_ConstantInput-ML (Rule 88 of total 164) .... done (Time = 0.00s, Memory = 0.0K)
     Checking Rule Prereqs_ConstantInput-ML (Rule 89 of total 164) .... done (Time = 0.00s, Memory = 32.0K)
     Checking Rule Ac_classify_param01 (Rule 90 of total 164) .... done (Time = 0.00s, Memory = 0.0K)
     Checking Rule AcOvlRtl (Rule 91 of total 164) .... done (Time = 0.00s, Memory = 0.0K)
-    Checking Rule AcOvlRtl (Rule 92 of total 164) .... done (Time = 0.00s, Memory = 32.0K)
+    Checking Rule AcOvlRtl (Rule 92 of total 164) .... done (Time = 0.01s, Memory = 32.0K)
     Checking Rule GenTopLevelBlocksForAutoSoc (Rule 93 of total 164) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule PECHECK56 (Rule 94 of total 164) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule SGDC_meta_design_hier01 (Rule 95 of total 164) .... done (Time = 0.00s, Memory = 0.0K)
@@ -170,18 +169,18 @@ Checking Rule SGDC_abstract_port04 (Rule 111 of total 164) .... done (Time = 0.0
 Checking Rule SGDC_abstract_port05 (Rule 112 of total 164) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule SGDC_abstract_port07 (Rule 113 of total 164) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule SGDC_abstract_port08 (Rule 114 of total 164) .... done (Time = 0.00s, Memory = 0.0K)
-Checking Rule SGDC_abstract_port10 (Rule 115 of total 164) .... done (Time = 0.00s, Memory = 0.0K)
+Checking Rule SGDC_abstract_port10 (Rule 115 of total 164) .... done (Time = 0.00s, Memory = -8.0K)
 Checking Rule SGDC_abstract_port11 (Rule 116 of total 164) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule SGDC_abstract_port12 (Rule 117 of total 164) .... done (Time = 0.00s, Memory = 0.0K)
-Checking Rule SGDC_abstract_port13 (Rule 118 of total 164) .... done (Time = 0.00s, Memory = 0.0K)
+Checking Rule SGDC_abstract_port13 (Rule 118 of total 164) .... done (Time = 0.00s, Memory = 8.0K)
 Checking Rule ReportUngroup (Rule 119 of total 164) .... done (Time = 0.00s, Memory = 0.0K)
-Checking Rule ResetFlop-ML (Rule 120 of total 164) .... done (Time = 0.01s, Memory = 1280.0K)
-Checking Rule SGDC_abstract_port21 (Rule 121 of total 164) .... done (Time = 0.00s, Memory = 0.0K)
+Checking Rule ResetFlop-ML (Rule 120 of total 164) .... done (Time = 0.00s, Memory = 0.0K)
+Checking Rule SGDC_abstract_port21 (Rule 121 of total 164) .... done (Time = 0.00s, Memory = -8.0K)
 Checking Rule SGDC_assume_path05 (Rule 122 of total 164) .... done (Time = 0.00s, Memory = 0.0K)
  Flattening fir (.lib instances separately flattened) ....
  Flattening completed
 Checking Rule AnalyzeBBox (Rule 123 of total 164) .... done (Time = 0.00s, Memory = 0.0K)
-Checking Rule ReportCheckDataSummary (Rule 61 of total 164) .... done (Time = 0.00s, Memory = 32.0K)
+Checking Rule ReportCheckDataSummary (Rule 61 of total 164) .... done (Time = 0.00s, Memory = 0.0K)
 
 Generating data for Console...
 
