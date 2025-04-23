@@ -149,6 +149,7 @@ module fir_tb
     initial begin
         axis_rst_n = 1;
         @(posedge axis_clk);
+        #2
         axis_rst_n = 0; 
         @(posedge axis_clk);
         @(posedge axis_clk);
