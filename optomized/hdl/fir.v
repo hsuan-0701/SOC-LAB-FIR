@@ -68,6 +68,12 @@
 //  mul_reg、acc_reg 、 y_buff). And use ss_stall and sm_stall while engin meet hazzard cause by input latency and       //
 //  output transfer latency. Stall pointer first and stall acc_clear 、pipline stage reg delay 1 cycle.                  //
 //                                                                                                                       //
+//  ___________      ___________     __________     __________      _________                                            //
+//  |         |      |         |     |         |    |         |     |        |                                           //
+//  | Memory  |  =>  | dat_reg |  => | mul_reg | => | acc_reg |  => | y_buff |  => output                                //
+//  |_________|      |_________|     |_________|    |_________|     |________|                                           //
+//                                                                                                                       //
+//                                                                                                                       //
 // Stall signal                                                                                                          //
 //  (I) Output transfer latency :                                                                                        //
 //    The y_buff(out put buffer) has valid data while next data process is finished (need to go into buff).This will     //  
