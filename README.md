@@ -1,4 +1,4 @@
-# SOC-LAB-FIR
+# SOC_LAB_FIR
 # 2025 spring SOC LAB
 
 ---
