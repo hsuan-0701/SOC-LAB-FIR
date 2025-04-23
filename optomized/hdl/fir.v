@@ -1,9 +1,31 @@
+// ----------------------------------------------------------------------------------------------------------------------
+//
+// MIT License
+// ---
+// Copyright © 2023 Company
+// .... Content of the license
+// -----------------------------------------------------------------------------------------------------------------------
+// =======================================================================================================================
+// Module Name : FIR
+// Author : Hsuan Jung,Lo
+// Create Date: 4/20/2025
+// Features & Functions:
+// .
+// .
+// =======================================================================================================================
+// Revision History:
+// Date         by      Version     Change Description
+// 4/23/2025   Hsuan      0.1       fix synthesis problem(timing loop) 
+// 
+//
+// -----------------------------------------------------------------------------------------------------------------------
+
 //--------------------------------------- AXI-LITE INTERFACE ------------------------------------------------------------//
-//* While fir idle , send write request if write buffer has valid-address and valid-data in priority.                    //
+//* While fir idle , send write request if write buffer has valid-address and valid-data .                               //
 //* if it won't write in this or next cycle we send read request (when read buff has valid-address).                     //
 //* It only allow to write cmd while engine is idle.                                                                     //
 //* While fir is running ,you only can read configuration reg .If you read tap paramemter it will return 'hffffffff.     //
-//* Make sure read and write requests are seperate.                                                                      //
+//* Make sure read and write requests are seperate.(write priority)                                                      //
 //      clk           >|  |  |  |  |  |  |  |                                                                            //
 //      tap_write     >___/---\__/---\__________(write request)                                                          //
 //      tap_read      >________________/---\____(read request)                                                           //
@@ -104,11 +126,9 @@
 //------------------------------------------------------------------------------------------------------------------------//
 
 module fir 
-#(  parameter pADDR_WIDTH     = 12,                    // * width of aaddress
-    parameter pDATA_WIDTH     = 32,                    // * width of data transfer
-    parameter pPOINTER_WIDTH  = 5 ,                    // * width of RAM pointer (refer by RAM's size: pointer_width = log2(RAM's row_num)), need to be smaller than address width *
-    parameter pDATA_RAM_DEPTH = 32,                    // * num of words can store in DATA_RAM    
-    parameter pCOUNTER_WIDTH  = 32                    // * width of counter (count number of data processed)
+#(  parameter pADDR_WIDTH     = 12,                    //  * width of aaddress
+    parameter pDATA_WIDTH     = 32,                    //  * width of data transfer   
+    parameter pCOUNTER_WIDTH  = 32                     //  * width of counter (count number of data processed)
 )
 (
     input   wire [(pDATA_WIDTH-1):0] tap_Do,
@@ -152,7 +172,32 @@ module fir
     output  wire [(pADDR_WIDTH-1):0] tap_A
 
 );
-//-------------------------------------------------------------------------------------------------------------//
+
+//==========================================================================================================================================//
+//----------------------------------------------------- SIZE set ---------------------------------------------------------------------------//
+localparam pPOINTER_WIDTH  = 5 ;                    //  * width of RAM pointer (refer by RAM's size: pointer_width = log2(RAM's row_num)), need to be smaller than address width *
+localparam pDATA_RAM_DEPTH = 32;                    //  * num of words can store in DATA_RAM 
+localparam pRAM_ADDR_MAX   = pDATA_RAM_DEPTH -1 ;   //  * maximum of the top word's address of data RAM   
+localparam INVALID_VALUE   = 32'hffffffff ;         //  * Invalid value return for non_idle read
+//----------------------------------------------- base address of configuration reg --------------------------------------------------------//
+//  * Memory Map of configuration reg 
+localparam ap_base        = 8'h00 ;
+localparam dat_len_base   = 8'h10 ;
+localparam tap_num_base   = 8'h14 ;
+localparam tap_para_base  = 8'h80 ;
+localparam tap_ram_base   = 12'h80;
+localparam pCONFIG_REF    = 8; 
+//-------------------------------------------------------- FIR STATE -----------------------------------------------------------------------//
+//  * BIT0 ([0]) of FIR state = configuration of ap_start 
+//  * BIT1 ([1]) of FIR state = configuration of ap_done
+//  * BIT2 ([2]) of FIR state = configuration of ap_idle
+localparam IDLE           = 3'b100;                 
+localparam DONE           = 3'b110;                 
+localparam START          = 3'b101;                 
+localparam RUN            = 3'b000;                 
+                     
+//============================================================================================================================================//
+
 //----------------------- AXI-LITE interface-----------------------//
 reg [(pADDR_WIDTH-1) : 0]               tap_addr_wbuff ;
 reg [(pADDR_WIDTH-1) : 0]               tap_addr_wbuff_nxt ;
@@ -244,36 +289,17 @@ reg                                     sm_tlast_reg_nxt;
 reg                                     x_last_reg;
 wire                                    x_last_reg_nxt ;
 
-
+//---------------------------------- string of zero used for reset -------------------------------------------------------------------------//
 wire[(pDATA_WIDTH + pADDR_WIDTH +pCOUNTER_WIDTH - 1) :0]    buff_clear ;
 assign buff_clear  = {(pADDR_WIDTH + pDATA_WIDTH + pCOUNTER_WIDTH){1'b0}} ;
 
 
-
-//--------------------------------------------//
-localparam pRAM_ADDR_MAX  = pDATA_RAM_DEPTH -1 ;
-localparam INVALID_VALUE  = 32'hffffffff ; // Invalid value return for non_idle read
-//---- base address of configuration reg------//
-localparam ap_base        = 8'h00 ;
-localparam dat_len_base   = 8'h10 ;
-localparam tap_num_base   = 8'h14 ;
-localparam tap_para_base  = 8'h80 ;
-localparam tap_ram_base   = 12'h80;
-//-------------- FIR STATE -------------------//
-localparam IDLE           = 3'b100;
-localparam DONE           = 3'b110;
-localparam START          = 3'b101;
-localparam RUN            = 3'b000;
-localparam pCONFIG_REF    = 8;
-//--------------------------------------------//
-
-//==========================================================================================================================================//
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //                                          FIR ENGINE (PIPELINE)                                                                           //
-//==========================================================================================================================================//
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 assign  sm_tlast          = sm_tlast_reg;
 assign  sm_tvalid         = y_buff_v;
 assign  sm_tdata          = y_buff;
-
 
 //------------------------------------------- pointer of DATA RAM / TAP RAM ----------------------------------------------------------------//
 assign x_pointer_diff_oi  = x_out_pointer - x_in_pointer; 
@@ -312,11 +338,8 @@ always @(posedge axis_clk or negedge axis_rst_n) begin
         end
     end
 end
-//------------------------------------------------------------------------------------------------------------------------------------------//
 
-
-//------------------------------------------------------- PIPELINE ENGINE ------------------------------------------------------------------//
-
+//------------------------------------------------------- PIPELINE STAGE ------------------------------------------------------------------//
 assign x_dat_nxt        = (data_write_done)? data_buff : data_Do;
 assign h_dat_nxt        = tap_Do;
 assign mul_nxt          = x_dat_reg * h_dat_reg;
@@ -433,13 +456,13 @@ always @(posedge axis_clk or negedge axis_rst_n) begin
         end
     end
 end
-//----------------------------------------------------------------------------------------------------------------------------------------------------
+//----------------------------------------------------------------------------------------------------------------------------------------------------//
 
 
 
-//-------------------------------------------------------------------------------------------------------------//
-//                                         AXI-STREAM INTERFACE (DATA INPUT)                        
-//-------------------------------------------------------------------------------------------------------------//
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//                                                          AXI-STREAM INTERFACE (DATA INPUT)                                                         //
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     assign ss_tready          = (axis_rst_n && (!fir_state[2]) && (!x_last_reg))? (!data_buff_v) : 1'b0;
     assign x_in_addr          = {buff_clear[(pADDR_WIDTH-pPOINTER_WIDTH-1) :0] , x_in_pointer , 2'b00};
     assign x_out_addr         = {buff_clear[(pADDR_WIDTH-pPOINTER_WIDTH-1) :0] , x_out_pointer , 2'b00};
@@ -494,9 +517,9 @@ end
         end
     end
 
-//----------------------------------------------------------------------------------------------------------------//
-//                                          AXI-LITE INTERFACE                                                    //
-//----------------------------------------------------------------------------------------------------------------//
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//                                                           AXI-LITE INTERFACE                                                                       //
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
         assign  awready     = (axis_rst_n)? (!tap_addr_wbuff_v ) : 1'b0;
         assign  wready      = (axis_rst_n)? (!tap_data_wbuff_v ) : 1'b0;
@@ -619,9 +642,9 @@ end
             end
         end
 
-//----------------------------------------------------------------------------------------------------------------//
-//                                              FIR CONFIG                                                        //
-//----------------------------------------------------------------------------------------------------------------//
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//                                                            FIR CONFIG                                                                            //
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
         assign data_len_nxt = (tap_write)? ((tap_addr_wbuff[(pCONFIG_REF-1) : 0] == dat_len_base)? tap_data_wbuff : data_len ) : data_len ;
         assign tap_num_nxt  = (tap_write)? ((tap_addr_wbuff[(pCONFIG_REF-1) : 0] == tap_num_base)? tap_data_wbuff : tap_num  ) : tap_num ;
