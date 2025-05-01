@@ -552,7 +552,7 @@ end
         always @(*) begin
             //* tap buffer for writing (address + data)
             tap_addr_wbuff_nxt = (awvalid && (!tap_addr_wbuff_v))? awaddr : tap_addr_wbuff ;   
-            tap_data_wbuff_nxt = (wvalid  && (!tap_data_rbuff_v))? wdata  : tap_data_wbuff ;
+            tap_data_wbuff_nxt = (wvalid  && (!tap_data_wbuff_v))? wdata  : tap_data_wbuff ;
         end
 
         always @(*) begin
